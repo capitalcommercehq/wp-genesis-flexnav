@@ -2,7 +2,7 @@
 /**
  * Plugin Name.
  *
- * @package   WP_Flexnav
+ * @package   WP_Genesis_Flexnav
  * @author    Travis Northcutt <travis@brightagency.net>
  * @license   GPL-2.0+
  * @link      http://brightagency.net
@@ -13,10 +13,10 @@
  * Plugin class.
  *
  *
- * @package WP_Flexnav
+ * @package WP_Genesis_Flexnav
  * @author  Travis Northcutt <travis@brightagency.net>
  */
-class WP_Flexnav {
+class WP_Genesis_Flexnav {
 
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
@@ -37,7 +37,7 @@ class WP_Flexnav {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'wp-flexnav';
+	protected $plugin_slug = 'wp-genesis-flexnav';
 
 	/**
 	 * Instance of this class.
@@ -68,7 +68,7 @@ class WP_Flexnav {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		add_action( 'genesis_header', array( $this, 'wp_flexnav_menu_toggle' ), 9 );
+		add_action( 'genesis_header', array( $this, 'wp_genesis_flexnav_menu_toggle' ), 9 );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class WP_Flexnav {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/wp-flexnav.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/wp-genesis-flexnav.css', __FILE__ ), array(), self::VERSION );
 	}
 
 	/**
@@ -103,11 +103,11 @@ class WP_Flexnav {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/wp-flexnav.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/wp-genesis-flexnav.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_enqueue_script( 'flexnav', plugins_url( 'js/jquery.flexnav.min.js', __FILE__ ), array('jquery'), self::VERSION );
 	}
 
-	public function wp_flexnav_menu_toggle() {
+	public function wp_genesis_flexnav_menu_toggle() {
 		echo '<div class="menu-toggle"><div class="menu-button">&#8801;</div></div>';
 	}
 

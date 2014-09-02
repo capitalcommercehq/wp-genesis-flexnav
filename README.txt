@@ -1,4 +1,4 @@
-=== WP Flexnav ===
+=== WP Genesis Flexnav ===
 Contributors: travisnorthcutt
 Tags: flexnav
 Requires at least: 3.9
