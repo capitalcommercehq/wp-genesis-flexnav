@@ -1,0 +1,26 @@
+/* Menu toggle */
+.menu-toggle {
+	color: #fff !important;
+	display: none;
+	float: right;
+	font-size: 40px;
+	font-size: 4rem;
+	font-weight: 900;
+	line-height: 0;
+	padding: 18px 0;
+}
+
+.menu-toggle:hover {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 765px) {
+	.menu-toggle {
+		display: inline-block;
+	}
+
+	.nav-primary {
+		display: none;
+		height: auto;
+	}
+}
