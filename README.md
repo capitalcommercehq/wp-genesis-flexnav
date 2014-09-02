@@ -8,4 +8,8 @@
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-WordPress implementation of Jason Weaver's Flexnav jQuery plugin (https://github.com/indyplanets/flexnav)
+WordPress implementation of Jason Weaver's [Flexnav jQuery plugin](https://github.com/indyplanets/flexnav)
+
+## Description
+
+This plugin should, out of the box, integrate Jason Weaver's [Flexnav jQuery plugin](https://github.com/indyplanets/flexnav) with any Genesis child theme.
