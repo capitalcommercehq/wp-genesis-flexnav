@@ -43,7 +43,7 @@ class WP_Genesis_Flexnav {
 	 *
 	 * @since     0.1.0
 	 */
-	private function __construct() {
+	public function __construct() {
 
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
