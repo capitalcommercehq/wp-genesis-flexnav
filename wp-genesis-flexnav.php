@@ -14,7 +14,7 @@
  * Plugin Name: WP Genesis Flexnav
  * Plugin URI:  https://github.com/tnorthcutt/wp-genesis-flexnav
  * Description: 
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Travis Northcutt
  * Author URI:  http://brightagency.net/
  * Text Domain: wp-genesis-flexnav
@@ -32,16 +32,16 @@ class WP_Genesis_Flexnav {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.1.0
+	 * @since   0.1.1
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.1.0';
+	const VERSION = '0.1.1';
 
 	/**
 	 * Initialize the plugin
 	 *
-	 * @since     0.1.0
+	 * @since     0.1.1
 	 */
 	public function __construct() {
 
@@ -55,7 +55,7 @@ class WP_Genesis_Flexnav {
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.1
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/wp-genesis-flexnav.css', __FILE__ ), array(), self::VERSION );
@@ -64,7 +64,7 @@ class WP_Genesis_Flexnav {
 	/**
 	 * Register and enqueues public-facing JavaScript files.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.1
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/wp-genesis-flexnav.js', __FILE__ ), array( 'jquery' ), self::VERSION );
