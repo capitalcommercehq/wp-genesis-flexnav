@@ -49,7 +49,7 @@ class WP_Genesis_Flexnav {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		add_action( 'genesis_header', array( $this, 'wp_genesis_flexnav_menu_toggle' ), 9 );
+		add_action( 'genesis_header', array( $this, 'wp_genesis_flexnav_menu_button' ), 9 );
 	}
 
 	/**
@@ -71,8 +71,8 @@ class WP_Genesis_Flexnav {
 		wp_enqueue_script( 'flexnav', plugins_url( 'js/jquery.flexnav.min.js', __FILE__ ), array('jquery'), self::VERSION );
 	}
 
-	public function wp_genesis_flexnav_menu_toggle() {
-		echo '<div class="menu-toggle"><div class="menu-button">&#8801;</div></div>';
+	public function wp_genesis_flexnav_menu_button() {
+		echo '<div class="menu-button"></div>';
 	}
 
 }
