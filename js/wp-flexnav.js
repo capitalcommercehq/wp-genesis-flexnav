@@ -1,6 +1,6 @@
 (function ($) {
 	"use strict";
 	$(function () {
-		$('.nav-primary').flexNav();
+		$('.menu-primary').flexNav();
 	});
 }(jQuery));
