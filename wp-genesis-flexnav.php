@@ -14,7 +14,7 @@
  * Plugin Name: WP Genesis Flexnav
  * Plugin URI:  https://github.com/tnorthcutt/wp-genesis-flexnav
  * Description: 
- * Version:     1.0.0
+ * Version:     0.1
  * Author:      Travis Northcutt
  * Author URI:  http://brightagency.net/
  * Text Domain: wp-genesis-flexnav
