@@ -25,16 +25,54 @@
  * GitHub Branch:     master
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+$wp_genesis_flexnav = new WP_Genesis_Flexnav;
+
+class WP_Genesis_Flexnav {
+
+	/**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since   0.1.0
+	 *
+	 * @var     string
+	 */
+	const VERSION = '0.1.0';
+
+	/**
+	 * Initialize the plugin
+	 *
+	 * @since     0.1.0
+	 */
+	private function __construct() {
+
+		// Load public-facing style sheet and JavaScript.
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+		add_action( 'genesis_header', array( $this, 'wp_genesis_flexnav_menu_toggle' ), 9 );
+	}
+
+	/**
+	 * Register and enqueue public-facing style sheet.
+	 *
+	 * @since    0.1.0
+	 */
+	public function enqueue_styles() {
+		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/wp-genesis-flexnav.css', __FILE__ ), array(), self::VERSION );
+	}
+
+	/**
+	 * Register and enqueues public-facing JavaScript files.
+	 *
+	 * @since    0.1.0
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/wp-genesis-flexnav.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		wp_enqueue_script( 'flexnav', plugins_url( 'js/jquery.flexnav.min.js', __FILE__ ), array('jquery'), self::VERSION );
+	}
+
+	public function wp_genesis_flexnav_menu_toggle() {
+		echo '<div class="menu-toggle"><div class="menu-button">&#8801;</div></div>';
+	}
+
 }
-
-require_once( plugin_dir_path( __FILE__ ) . 'class-wp-genesis-flexnav.php' );
-
-// Register hooks that are fired when the plugin is activated or deactivated.
-// When the plugin is deleted, the uninstall.php file is loaded.
-register_activation_hook( __FILE__, array( 'WP_Genesis_Flexnav', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'WP_Genesis_Flexnav', 'deactivate' ) );
-
-add_action( 'plugins_loaded', array( 'WP_Genesis_Flexnav', 'get_instance' ) );
