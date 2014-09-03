@@ -50,6 +50,8 @@ class WP_Genesis_Flexnav {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		add_action( 'genesis_header', array( $this, 'wp_genesis_flexnav_menu_button' ), 9 );
+		add_filter( 'wp_nav_menu_args', array( $this, 'flexnav_menu_args' ) );
+
 	}
 
 	/**
@@ -74,5 +76,13 @@ class WP_Genesis_Flexnav {
 	public function wp_genesis_flexnav_menu_button() {
 		echo '<div class="menu-button"></div>';
 	}
+
+	function flexnav_menu_args( $args ) {
+		if( 'primary' == $args['theme_location'] ) {
+			$args['menu_class'] .= ' flexnav';
+		}
+		return $args;
+	}
+
 
 }
