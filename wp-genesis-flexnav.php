@@ -74,7 +74,7 @@ class WP_Genesis_Flexnav {
 	}
 
 	public function wp_genesis_flexnav_menu_button() {
-		echo '<div class="menu-button"></div>';
+		echo '<div class="menu-button">Menu</div>';
 	}
 
 	function flexnav_menu_args( $args ) {
